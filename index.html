@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="author" content="RM3D">
+		<meta name="description" content="Documatation for the Blender's add-on RM3D Chain Crafter">
+		<meta HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+		<title>RM3D Chain Crafter Docs</title>
+		<link rel="icon" href="img/cc_icon.png" type="image/x-icon">
+		<link rel="stylesheet" href="cc_help.css" type="text/css">
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	</head>
+	<body>
+	<!-- 	<header class="doc-header">
+			Documentation
+		</header> -->
+		<div class="container">
+			<!-- SIDEBAR -->
+			<div class="sidebar">
+				<div class="sidebar-top">
+					<img src="img/rm3d_logo.png"></img>
+				</div>
+				<div class="sidebar-scrollbox">
+					<h2 class="sidebar-title">Content</h2>
+					<div class="sidebar-ui-type-link">
+						<a href="#type-installation">Installation</a>
+					</div>
+					<button type="button" class="sidebar-ui-type">Side Panel ( N-Panel )</button>
+					<div class="sidebar-cat-content">
+						<h4 class="sidebar-ui-category">Create Chains</h4>
+						<ul>
+							<li>
+								<a href="#draw-chain">
+									<span class="list-item">Draw Chain</span>
+								</a>
+							</li>
+							<li>
+								<a href="#curve-to-chain">
+									<span class="list-item">Curve To Chain</span>
+								</a>
+							</li>
+							<li>
+								<a href="#connect-chain">
+									<span class="list-item">Connecting Chain</span>
+								</a>
+							</li>
+						</ul>
+
+						<h4 class="sidebar-ui-category">Manage Chains</h4>
+						<ul>
+							<li>
+								<a href="#edit-chain">
+									<span class="list-item">Edit Chain</span>
+								</a>
+							</li>
+							<li>
+								<a href="#duplicate-chains">
+									<span class="list-item">Duplicate Chains</span>
+								</a>
+							</li>
+							<li>
+								<a href="#delete-chains">
+									<span class="list-item">Delete Chains</span>
+								</a>
+							</li>
+							<li>
+								<a href="#hide-chains">
+									<span class="list-item">Hide Chains</span>
+								</a>
+							</li>
+							<li>
+								<a href="#unhide-chains">
+									<span class="list-item">Unhide Chains</span>
+								</a>
+							</li>
+						</ul>
+						<h4 class="sidebar-ui-category">Chain Name</h4>
+						<ul>
+							<li>
+								<a href="#rename-chains">
+									<span class="list-item">Rename Chains</span>
+								</a>
+							</li>
+						</ul>
+						<h4 class="sidebar-ui-category">Chain Controls</h4>
+						<ul>
+							<li>
+								<a href="#select-controls">
+									<span class="list-item">Select All Controls</span>
+								</a>
+							</li>
+							<li>
+								<a href="#select-main">
+									<span class="list-item">Select Main Control</span>
+								</a>
+							</li>
+							<li>
+								<a href="#cycle-controls">
+									<span class="list-item">Cycle Controls</span>
+								</a>
+							</li>
+							<li>
+								<a href="#tilt-controls">
+									<span class="list-item">Tilt Controls</span>
+								</a>
+							</li>
+							<li>
+								<a href="#add-controls">
+									<span class="list-item">Add Control</span>
+								</a>
+							</li>
+							<li>
+								<a href="#remove-controls">
+									<span class="list-item">Remove Control</span>
+								</a>
+							</li>
+							<li>
+								<a href="#save-chain">
+									<span class="list-item">Save Chain</span>
+								</a>
+							</li>
+							<li>
+								<a href="#load-chain">
+									<span class="list-item">Load Chain</span>
+								</a>
+							</li>
+							<li>
+								<a href="#add-key">
+									<span class="list-item">Add Chain Key</span>
+								</a>
+							</li>
+							<li>
+								<a href="#remove-key">
+									<span class="list-item">Remove Chain Key</span>
+								</a>
+							</li>
+						</ul>
+						<h4 class="sidebar-ui-category">Properties</h4>
+							<ul>
+								<li>
+									<a href="#control-size">
+										<span class="list-item">Set Control Size</span>
+									</a>
+								</li>
+								<li>
+									<a href="#control-shape">
+										<span class="list-item">Set Control Shape</span>
+									</a>
+								</li>
+								<li>
+									<a href="#controls-visible">
+										<span class="list-item">Controls Visibility</span>
+									</a>
+								</li>
+								<li>
+									<a href="#controls-infront">
+										<span class="list-item">Display In Front</span>
+									</a>
+								</li>
+								<li>
+									<a href="#main-size">
+										<span class="list-item">Set Main Control Size</span>
+									</a>
+								</li>
+								<li>
+									<a href="#main-visible">
+										<span class="list-item">Main Control Visibility</span>
+									</a>
+								</li>
+							</ul>
+						<h4 class="sidebar-ui-category">Tools</h4>
+						<ul>
+							<li>
+								<a href="#update-controls">
+									<span class="list-item">Update Controls</span>
+								</a>
+							</li>
+							<li>
+								<a href="#extract-mesh">
+									<span class="list-item">Ectract Mesh</span>
+								</a>
+							</li>
+							<li>
+								<a href="#apply_count">
+									<span class="list-item">Apply Auto-Count</span>
+								</a>
+							</li>
+						</ul>
+						<br>
+					</div>
+					<div class="sidebar-ui-type-link">
+						<a href="#type-modifier">Modifier Parameters</a>
+					</div>
+					<!-- <div class="sidebar-ui-type-link">
+						<a href="#type-notes">Additional Notes</a>
+					</div> -->
+				</div>
+			</div>
+			<div class="vertical-bar"></div>
+			<!-- MAIN CONTENT -->
+			<div class="content">
+				<div class="content-header">
+					<img src="img/cc_header.png"></img>
+				</div>
+				<div class="content-doc">
+					<h1>Chain Crafter Documentation</h1>
+					<p>
+						The Chain Crafter generates procedural chains with control handles. These control handles can be used to freely position, rotate or animate the chains. Add or remove chain controls and adjust their shape and size as needed. The add-on features a custom duplicate operator to copy selected chains with all control handles. <br>
+						Each chain may consist of up to three different link segments, a start link and an end link as well as an attachment (e.g. a pendant). Each segment, its length, link type and scale as well as other properties can be easily adjusted in the chain's node modifier.
+					</p>
+
+					<h2 class="ui-type" id="type-installation">Installation</h2>
+					<p>
+						Open up the Preferences window and select add-ons. In the upper right corner of the window click on the arrow and choose <em class="em-text">install from disk...</em>. In the file browser which opens, navigate to the <em class="em-text">rm3d_chain_crafter.zip</em> file, select it and cofirm to Install from Disk. There is no need to unpack the zip file.
+					</p>
+					<p>
+						After installation you can view a list of available hotkeys and set-up the following preferences:
+						<ul>
+							<li>Controls Tilt Step</li>
+							<p>
+								Influences the rotation speed of chain controls. Lower values offer a subtler control but decrease the speed of the chain tilt. Default vlaue is 0.2
+							</p>
+							<li>Controls Default Size</li>
+							<p>
+								Sets the default size of the chain controls. Default value is 0.1
+							</p>
+							<li>Controls Default Shape</li>
+							<p>
+								Sets the default shape of the chain controls.
+							</p>
+							<li>Controls In Front</li>
+							<p>
+								Sets the default display overlay of chain controls.
+							</p>
+						</ul>
+					</p>
+
+					<h3 class="ui-category" id="type-installation">Asset Library</h3>
+					<p>
+						After successfully installing the add-on you will have access to a new asset library in your Asset Browser named <em class="em-text">CC Assets</em> with 50 chain links,25 chain clasps that are bundled with Chain Crafter.
+					</p>
+
+					<h3 class="ui-category" id="type-installation">Chain Components</h2>
+					<p>
+						<b class="ui-feature">Chain Curves</b><br>
+						The chain curve is the main object which has the chain modifier applied to it.
+						
+					</p>
+					<p>
+						<b class="ui-feature">Chain Controls</b><br>
+						The controls modify the chain curve's shape. You can add or remove controls   as needed as well as change their appearance. Controls can also be animated.
+					</p>
+					<p>
+						<b class="ui-feature">Main Control</b><br>
+						Each chain curve and its controls are parented to a main control. Use this specific object to move and rotate the chain with all its controls. The chain curve itself can't be transformed and its movement has been locked.
+					</p>
+
+					<h2 class="ui-type" id="type-side-panel">Side Panel ( N-Panel )</h2>
+
+					<h3 class="ui-category" id="cat-create-chains">Create Chains</h3>
+					<p>
+						<b class="ui-feature" id="draw-chain">Preset</b><br>
+						Select a preset which can be applied to the currently selected chains or used for the next one you create. You can always modify the parameters in the chain's node modifier.
+					</p>
+					<p>
+						<b class="ui-feature" id="draw-chain">Draw Chain</b><br>
+						Draw a chain with the curve drawing tool or any other spline editing tool. Finish the drawing mode with <em class="hotkey">Right Mouse</em> or by hitting <em class="hotkey">Enter</em>. The chain controls will be automatically applied to the new chain. You can also cancel the chain drawing mode with <em class="hotkey">Escape</em>.
+					</p>
+					<p>
+						<b class="ui-feature" id="curve-to-chain">Curve To Chain</b><br>
+						Convert one or more curves to chains using the selected preset.
+					</p>
+					<p>
+						<b class="ui-feature" id="connect-chain">Connecting Chain</b><br>
+						Create a chain between two selected objects. The end controls of this chain will be connected to the first and last selected object respectivelly.
+					</p>
+
+					<!--MANAGE CHAINS-->
+
+					<h3 class="ui-category" id="cat-manage-chains">Manage Chains</h3>
+					<p>
+						<b class="ui-feature" id="edit-chain">Edit Chain</b><br>
+						Open the modifier tab to edit the Chain Crafter's node modifier parameters. 
+						<br>
+					</p>
+					<p>
+						<b class="ui-feature" id="duplicate-chains">Duplicate Chains <em class="hotkey">| Ctrl + Alt + D</em></b><br>
+						Create copies of the selected chains with all their components. The feature works similar to Blender's native duplicate operator. After initialising the command move the chains to a desired location. While moving the copies you can zoom in and out with the <b class="hotkey">Mousewheel</b>,
+						rotate the viewport with <b class="hotkey">Alt + Left
+						Mouse</b> and pan with <b class="hotkey">Alt + Middle
+						Mouse</b>. Confirm the new location of the duplicated chains with
+						<b class="hotkey">Left Mouse</b> or <b class="hotkey">Enter</b>.
+						Press <b class="hotkey">Right Mouse</b> to return to the initial position.
+					</p>
+					<p>
+						<b class="ui-feature" id="delete-chains">Delete Chains <em class="hotkey">| Ctrl + Alt + Backspace</em></b><br>
+						Delete selected chains and their components. This command won't delete the curves, so you can recreate the chains with the <em class="em-text">Curve to Chain</em> command.
+					</p>
+					<p>
+						<b class="ui-feature" id="hide-chains">Hide Chains <em class="hotkey">| Shift + Alt + H</em></b><br>
+						Hides all selected chains and their components.
+					</p>
+					<p>
+						<b class="ui-feature" id="unhide-chains">Unhide Chains <em class="hotkey">| Shift + Alt + U</em></b><br>
+						Unhides all currently hidden chains in the scene.
+					</p>
+
+					<!--CHAIN NAME-->
+
+					<h3 class="ui-category" id="cat-chain-name">Chain Name</h3>
+					<p>
+						<b class="ui-feature" id="rename-chains">Rename</b><br>
+						Rename all selected chains and their components with the name specified in the text field. A sequential number will be automatically appended to the name, so there's no need for adding it manually. Also the name specified will be used as the preferred name for new chains.
+					</p>
+
+					<!--CHAIN CONTROLS-->
+
+					<h3 class="ui-category" id="cat-controls">Chain Controls</h3>
+					<p>
+						<b class="ui-feature" id="select-controls">Select All</b><br>
+						Select all controls of the selected chains.
+					</p>
+					<p>
+						<b class="ui-feature" id="select-main">Select Main</b><br>
+						Select the main controls of the selected chains.
+					</p>
+					<p>
+						<b class="ui-feature" id="cycle-controls">Cycle Controls <em class="hotkey">| Pgup / Pgdn</em></b><br>
+						Cycle through all controls of the currently active chain.
+					</p>
+					<p>
+						<b class="ui-feature" id="tilt-controls">Tilt Controls <em class="hotkey">| Ctrl + Alt + Mousewheel</em></b><br>
+						Tilt the chain at selected chain controls.
+					</p>
+					<p>
+						<b class="ui-feature" id="add-controls">Add Controls <em class="hotkey">| Shift + Alt + Ins</em></b><br>
+						Add new control handles inbetween two or more selected chain controls. You can select controls from multiple chains but the controls need to be selected in a sequential manner. <br>
+						<em class="note"><b>Note:</b><br>
+						If you select three controls in a row, you'll get two new controls. </em>
+					</p>
+					<p>
+						<b class="ui-feature" id="remove-controls">Remove Controls <em class="hotkey">| Shift + Alt + Del</em></b><br>
+						Remove selected chain controls. <br>
+						<em class="note"><b>Note:</b><br>
+						Technically you can delete all chain controls in a chain but this will result in an empty curve object. </em>
+					</p>
+					<p>
+						<b class="ui-feature" id="save-chain">Save Chain</b><br>
+						Save the current shape of the selected chain(s). This information will be saved with the blend file. A default shape is automatically stored after generating a new chain.<br>
+						<em class="note"><b>Note:</b><br>
+						Saving the default shape doesn't include the location and rotation of the main control.</em>
+					</p>
+					<p>
+						<b class="ui-feature" id="load-chain">Load Chain</b><br>
+						Load the default shape of the selected chain(s). When loading without having previously saved a default shape the chain will revert to its original form as it was created. 
+					</p>
+					<p>
+						<b class="ui-feature" id="add-key">Add Chain Key <em class="hotkey">| Ctrl + Alt + Numpad Plus</em></b><br>
+						Add keyframes to all chain controls of selected chains at the current time. This command will also replace existing keyframes.
+					</p>
+					<p>
+						<b class="ui-feature" id="remove-key">Remove Chain Key <em class="hotkey">| Ctrl + Alt + Numpad Minus</em></b><br>
+						Remove keyframes from all chain controls of the selected chains if keys exist at the current time.
+					</p>
+
+					<!--PROPERTIES-->
+
+					<h3 class="ui-category" id="cat-properties">Properties</h3>
+					<p>
+						<b class="ui-feature" id="control-size">Size</b><br>
+						Set the size of the chain controls for the selected chains.
+					</p>
+					<p>
+						<b class="ui-feature" id="control-shape">Shape</b><br>
+						Set chain controls shape for the selected chains.
+					</p>
+					<p>
+						<b class="ui-feature" id="controls-visible">Visible</b><br>
+						Show or hide controls of the selected chains.
+					</p>
+					<p>
+						<b class="ui-feature" id="controls-infront">In Front</b><br>
+						Display controls of selected chains in front of other objects.
+					</p>
+					<p>
+						<b class="ui-feature" id="main-size">Main Size</b><br>
+						Set the size of the main controls for the selected chains.
+					</p>
+					<p>
+						<b class="ui-feature" id="main-visible">Main Visible</b><br>
+						Show or hide the main controls of the selected chains.
+					</p>
+
+					<h3 class="ui-category" id="cat-tools">Tools</h3>
+					<p>
+						<b class="ui-feature" id="update-controls">Update Controls</b><br>
+						Updates the chain controls for all selected chains. This is particularly usefull if you have added a new spline to an already existing chain or accidentally deleted some of the chain controls.
+					</p>
+					<p>
+						<b class="ui-feature" id="extract-mesh">Extract Mesh</b><br>
+						Creates a mesh snapshot of each selected chain in its current state. The chain itself won't be altered. This can be usefull i.e. to create meshes for shape keys or generate static models for a game engine. Extracted meshes will be placed into the <em class="em-text">CC_Extraced</em> collection.
+					</p>
+					<p>
+						<b class="ui-feature" id="apply-count">Apply Auto-Count</b><br>
+						Calculates and applies a fixed number of links per chain segment to fill the curve. Disables Auto-Count. Useful for animating chains to prevent links from being added or removed when modifying the shape of the chain.  
+					</p>
+
+					<h2 class="ui-type" id="type-modifier">Chain's Modifier Parameters</h2>
+					<!-- <p></p> -->
+					<p>The Chain Crafter nodes modifier features a set of parameters to modifiy each chain individually.</p>
+					<table class="table-parameters">
+						<tr>
+							<th>Parameter</th>
+							<th>Definition</th>
+						</tr>
+						<tr>
+							<td class="parameter">Global Tilt</td>
+							<td class="definition">Sets the global tilt of all chain links.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Global Align</td>
+							<td class="definition">Sets the global alignment of all chain links along the curve.</td>
+						</tr>
+						<tr class="table-empty-line"><td colspan="2"></td></tr>
+						<tr>
+							<td class="parameter">Auto-Count</td>
+							<td class="definition">Automatically calculates the amount of links needed to fit the curve or segment. This parameter is enabled by default.
+							</td>
+						</tr>
+						<tr class="table-empty-line"><td colspan="2"></td></tr>
+						<tr>
+							<td class="parameter">Link #</td>
+							<td class="definition">Sets the link object for a chain segment. There can be three chain segments in total.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Link # Secondary</td>
+							<td class="definition">Sets an optional secondary link for a chain segment which will be interchanged with the main link every other time.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Link # Interval</td>
+							<td class="definition">Sets the distance between two links. If the value is 0 the interval will be calculated based on the bounding box of the chain link.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Link # Count</td>
+							<td class="definition">Sets the number of links per segment manually. This parameter only works if auto-count is disabled.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Link # Scale</td>
+							<td class="definition">Sets the size of the chain links per segment. This value doesn't influence the interval parameter.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Link # Tilt</td>
+							<td class="definition">Adjusts the tilt of links per segment.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Link # Clip Start</td>
+							<td class="definition">Sets the start of a segment.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Link # Clip End</td>
+							<td class="definition">Sets the end of a segment.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Link # Rotate Every 2nd</td>
+							<td class="definition">Rotates every other chain link 90 degrees in the segment.</td>
+						</tr>
+						<tr class="table-empty-line"><td colspan="2"></td></tr>
+						<tr>
+							<td class="parameter">Start Link</td>
+							<td class="definition">Places a link at the start of the chain.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Start Link Scale</td>
+							<td class="definition">Sets the size of the start link.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Start Link Rotation (XYZ)</td>
+							<td class="definition">Roatets the start link individually.</td>
+						</tr>
+						<tr class="table-empty-line"><td colspan="2"></td></tr>
+							<td class="parameter">End Link</td>
+							<td class="definition">Places a link at the end of a chain.</td>
+						</tr>
+						<tr>
+							<td class="parameter">End Link Scale</td>
+							<td class="definition">Sets the size of the end link.</td>
+						</tr>
+						<tr>
+							<td class="parameter">End Link Rotation (XYZ)</td>
+							<td class="definition">Rotates the end link individually.</td>
+						</tr>
+						<tr class="table-empty-line"><td colspan="2"></td></tr>
+						<tr>
+							<td class="parameter">Show Pendant</td>
+							<td class="definition">Shows or hides the attachment.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Pendant</td>
+							<td class="definition">Attaches an object to the chain.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Pendant Scale</td>
+							<td class="definition">Sets the size of the attachment</td>
+						</tr>
+						<tr>
+							<td class="parameter">Pendant Position</td>
+							<td class="definition">Sets the position of the attachment along the chain.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Pendant Rotation (XYZ)</td>
+							<td class="definition">Rotates the attachment individually.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Pendant Offset (UV)</td>
+							<td class="definition">Moves the attachment relative to the location of the chain.</td>
+						</tr>
+						<tr class="table-empty-line"><td colspan="2"></td></tr>
+						<tr>
+							<td class="parameter">Override Material X</td>
+							<td class="definition">Override materials for each chain link individually as well as the start and the end link.</td>
+						</tr>
+						<tr>
+							<td class="parameter">Material X</td>
+							<td class="definition">Assign an override material.</td>
+						</tr>
+					</table>
+					<br><br>
+					<!-- <h2 class="ui-type" id="type-notes">Additional Notes</h2>
+					<p>
+						If you have any feedback or suggestions or encounter any problems with the add-on please leave a comment on my Blender Market contact.
+					</p> -->
+					<p>
+						Have fun with Chain Crafter.
+					</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			var coll = document.getElementsByClassName("sidebar-ui-type");
+			var i;
+			
+			for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.maxHeight){
+				  content.style.maxHeight = null;
+				} else {
+				  content.style.maxHeight = content.scrollHeight + "px";
+				}
+			  });
+			}
+		</script>
+	</body>
+</html>
